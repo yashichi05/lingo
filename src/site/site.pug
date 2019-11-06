@@ -1,0 +1,28 @@
+doctype html
+html(lang='zh-Hant-TW')
+  head
+    include ../htmlhead.include.pug
+  body
+    include ../navbar.include.pug
+    
+    .container-fluid
+      .shopname 呤粿烘焙
+      section.site.d-flex.justify-content-center.align-items-center
+        //- img(src="img/site_bg.jpg" width="100%")
+        .rectOut.d-flex.justify-content-center.align-items-center
+          .rectIn
+          .rectBg.position-absolute
+          .rectBgIn.position-absolute
+          .rectText.position-absolute.d-flex.justify-content-between.align-items-center
+            div
+              p.pl-5 
+                span 我
+                |們位於‪ 台中市豐原區市政路4號
+              p.pl-2 呤粿烘焙專家尋訪全世界的麵包
+              p 只為替你帶來稀有珍貴，充滿異國特色的美味
+              p.pl-5 我們稱之為呤粿克典藏麵包系列
+              p.pl-3 所有品項皆為季節限定並限量推出，期待你親自體驗
+            div
+              img(src="img/map.jpg" width="150px" height="150px")
+
+

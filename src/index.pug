@@ -1,18 +1,13 @@
 doctype html
-html(lang='en')
+html(lang='zh-Hant-TW')
   head
-    link(rel='stylesheet', href='css/bundle.css', type='text/css')
-    script(src='js/bundle.js', charset='utf-8')
-    script(src='js/all.js', charset='utf-8')
-    link(rel='stylesheet', href='css/all.css', type='text/css')
-    title Jade
+    include htmlhead.include.pug
   body
-    h1 Jade - node template engine
-    include thing.include.pug
-    #container.col
-      p You are amazing
-      p
-        | Jade is a terse and simple
-        | templating language with a
-        | strong focus on 
-        | and powerful 
+    include navbar.include.pug
+    
+    .container-fluid
+      .shopname 呤粿烘焙
+      section
+        img(src="img/banner_01.jpg" width="100%")
+      section
+        img(src="img/banner_02.jpg" width="100%")

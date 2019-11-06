@@ -8,8 +8,14 @@ var uglifycss = require('gulp-uglifycss'); //css 壓縮
 var uglify = require('gulp-uglify'); //js壓縮
 var concat = require('gulp-concat'); //js合併檔案
 var concatCss = require('gulp-concat-css'); //css 合併檔案
+var gulpImagemin = require('gulp-imagemin'); //imgae 壓縮
 sass.compiler = require('node-sass'); //解析SASS 用
 
+img_def = function () {
+  return src('src/img/**') //include.pug 除外
+    .pipe(gulpImagemin())
+    .pipe(dest('./dist/img'));
+}
 
 pug_def = function () {
   return src(['src/**/*.pug','!src/**/*.include.pug']) //include.pug 除外
@@ -72,6 +78,7 @@ extendcss_def = function () { //extend 資料截css 編譯
 watch('src/**/*.pug', pug_def);
 watch('src/**/*.sass', sass_def);
 watch('src/**/*.js', js_def);
-exports.default = series(creat_dist,initFolder, parallel(pug_def, sass_def, js_def,extendjs_def,extendcss_def))
+watch('src/img/**', img_def);
+exports.default = series(creat_dist,initFolder, parallel(pug_def, sass_def, js_def,extendjs_def,extendcss_def,img_def))
 
 
