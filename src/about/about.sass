@@ -12,15 +12,15 @@
     .row
         // background-color: #ccc
         .about2_Lbg
-            width: 70%
-            height: 800px
-            background-color: #fcba2775
+            width: 75%
+            height: 900px
+            background-color: #fcba2720 
             left: 0px
             top: 0px
         .about2_Rbg
             width: 60%
-            height: 90px
-            background-color: #fcba2775
+            height: 50px
+            background-color: #fcba2720
             right: 0px
             bottom: 0px
         section
@@ -30,11 +30,20 @@
                 padding: 0
             .textdiv
                 padding: 20px
+                max-width: 300px
             .imgdiv
+                width: 300px
+                &.borderimg
+                    background-color: white
                 img
                     max-width: 100%
                 h3
                     opacity: 0
+@media (min-width: 1600px)
+    .container-fluid.about_content2
+        .about2_Lbg
+            width: 63% !important
+
 
 
 .container-fluid.about_content1
@@ -77,13 +86,13 @@
         min-height: 500px
         overflow: hidden
         background: url(../../img/about3_bg.jpg) no-repeat center center
-        background-size: 100vw auto
+        background-size: 1920px auto
         .rectOut
-            width: 540px
+            width: 100%
             height: 320px
             background-color: #fff
             background: url(../../img/about3_bg.jpg) no-repeat center center;
-            background-size: 100vw auto
+            background-size: 1920px auto
             // filter: blur(10px)
 
             position: relative
@@ -93,7 +102,7 @@
                 height: 100%
                 // background-color: #ccc
                 background: url(../../img/about3_bg.jpg) no-repeat center center
-                background-size: 100vw auto
+                background-size: 1920px auto
                 filter: blur(10px)
             .rectBg
                 width: 100%
@@ -117,3 +126,48 @@
                     span
                         font-size: 22px
                         font-weight: bold
+@media (max-width: 1024px)
+    .container-fluid.about
+        padding-left: 0px
+        .imgdiv
+            padding: 0
+        .odd
+            .textdiv
+                padding-left: 20px
+    .about_content3
+        section
+            background-size: 1024px auto
+            .rectOut
+                width: 100% !important
+                height: 100% !important
+                background-size: 1024px auto
+                .rectIn
+                    filter: blur(2px)
+                    height: 100% !important
+                    width: 100%
+                    background-size: 1024px auto
+                .rectText
+                    width: 90% !important
+                    padding-top: 20px
+                .rectBgIn
+                    height: 310px !important
+                    width: 100% !important
+                    background-color: #fff
+                    opacity: 0.2 !important
+                    border: 0px
+                .rectBg
+                    height: 350px !important
+                    width: 100% 
+                    opacity: 0.1 !important
+    .about_content2
+        .imgdiv
+            width: 100% !important
+        .textdiv
+            max-width: 100% !important
+    
+        .about2_Rbg
+            width: 80% !important
+            height: 300px !important
+            background-color: #fcba2720
+            right: 0px
+            bottom: 0px

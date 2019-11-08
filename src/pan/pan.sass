@@ -22,15 +22,16 @@
         z-index: -1
         background-color: #FCBA27
     section
-        .col-7
+        .col-lg-7
             padding: 0
-        .col-5
+        .col-lg-5
             padding: 0
         .textdiv
             padding: 20px
         .imgdiv
             img
-                max-width: 100%
+                width: 100%
+                min-width: 100%
             h3
                 opacity: 0
             hr
@@ -47,3 +48,31 @@
     .odd
         .textdiv
             padding-right: 0px
+.navbar-brand
+        display: none
+@media (max-width: 1024px)
+    .leftnav
+        display: none
+    hr,.left_bg,.shopname
+        display: none
+    .container-fluid.pan_c,.container-fluid.dessert_c
+        padding-left: 0
+        padding-top: 0
+        .col-12
+            padding: 0
+    .leftnav.about
+        width: 100%
+        height: 70px
+        top: 100px
+        display: flex
+        padding-top: 0px
+        justify-content: space-around
+        align-items: center
+        overflow: auto
+        position: static
+        .link
+            margin-bottom: 0px
+            p
+                display: none
+            img
+                width: 50px

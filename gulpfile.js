@@ -56,12 +56,19 @@ creat_dist = function () {
 }
 
 extendjs_def = function () { //extend 資料截js 編譯
-  return src( 'src/extend/*.js')
+  return src( ['src/extend/*.js','!src/extend/*.pre.js'])
     .pipe(babel({
       presets: ['@babel/env']
     }))
     .pipe(rename({ dirname: '' }))
     .pipe(concat('bundle.js'))
+    .pipe(uglify())
+    .pipe(dest('./dist/js/'));
+}
+extendjsPre_def = function () { //extend 資料截js 編譯
+  return src( 'src/extend/*.pre.js')
+    .pipe(rename({ dirname: '' }))
+    .pipe(concat('bundlePre.js'))
     .pipe(uglify())
     .pipe(dest('./dist/js/'));
 }
@@ -79,6 +86,6 @@ watch('src/**/*.pug', pug_def);
 watch('src/**/*.sass', sass_def);
 watch('src/**/*.js', js_def);
 watch('src/img/**', img_def);
-exports.default = series(creat_dist,initFolder, parallel(pug_def, sass_def, js_def,extendjs_def,extendcss_def,img_def))
+exports.default = series(creat_dist,initFolder, parallel(pug_def, sass_def, js_def,extendjs_def,extendcss_def,img_def,extendjsPre_def))
 
 
